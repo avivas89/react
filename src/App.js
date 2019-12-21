@@ -72,6 +72,24 @@ export default App;*/
 //5- for = htmlFor
 //6- dentro de jsc no se usa if, else, while
 
+const datosCards = [
+  {
+    title: 'Pug desde cero',
+    image: 'https://drupal.ed.team/sites/default/files/imagenes-cdn-edteam/2018-09/cursos-pug.jpg',
+    text: 'Con pug puedes escribir código HTML sencillo y agregarle lógica de...'    
+  },
+  {
+    title: 'JavaScript desde cero',
+    image: 'https://drupal.ed.team/sites/default/files/styles/medium/public/courses/images/javascript_0.jpg?itok=aKHihrP0',
+    text: 'Aprende el lenguaje de programación más importante de l...'    
+  },
+  {
+    title: 'Markdown desde cero',
+    image: 'https://drupal.ed.team/sites/default/files/imagenes-cdn-edteam/2018-09/markdown-poster.png',
+    text: 'Escribe código HTML limpio sin preocuparte de las etiquetas ni...'    
+  }
+]
+
 const App =() => (
   <Container fluid="true">
     <Row>
@@ -116,16 +134,35 @@ const App =() => (
       </Col>
     </Row>
     <Row>
-      <Col xs={12} md={4} className='mb-1'>
-        <Cards/>
-      </Col> 
-      <Col xs={12} md={4} className='mb-1'>
-        <Cards/>
-      </Col> 
-      <Col xs={12} md={4} className='mb-1'>
-        <Cards/>
-      </Col> 
+    {/*  <Cards 
+        title="Pug desde cero" 
+        text="Con pug puedes escribir código HTML sencillo y agregarle lógica de..." 
+        textbutton="Ver más"
+        image="https://drupal.ed.team/sites/default/files/imagenes-cdn-edteam/2018-09/cursos-pug.jpg"/>
+      <Cards
+        title="JavaScript desde cero" 
+        text="Aprende el lenguaje de programación más importante de l..." 
+        textbutton="Ver más"
+        image="https://drupal.ed.team/sites/default/files/styles/medium/public/courses/images/javascript_0.jpg?itok=aKHihrP0"/>
+      <Cards
+          title="Markdown desde cero" 
+          text="Escribe código HTML limpio sin preocuparte de las etiquetas ni..." 
+          textbutton="Ver más"
+          image="https://drupal.ed.team/sites/default/files/imagenes-cdn-edteam/2018-09/markdown-poster.png"/>
+      <Cards
+          text="Escribe código HTML limpio sin preocuparte de las etiquetas ni..." 
+          textbutton="Ver más"/> 
+      */}
+      {/*Recorriendo arrays, map es de js normal, este recorre arrays los asigna a una variable
+       y luego dibuja un Cards por cada elemento del array*/}
+
+      {
+        datosCards.map( c => <Cards title={c.title} image={c.image} text={c.text} textbutton={c.textbutton}/>)
+      }         
     </Row>
+
+ 
+
   </Container>
 )
 
